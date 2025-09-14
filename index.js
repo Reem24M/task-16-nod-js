@@ -10,24 +10,24 @@ app.set('json spaces',2)
 connectDB();
 
 
-const ips = ['http://127.0.0.1:3000', "http://localhost:3000", "http://127.0.0.1:5500"];
-app.use(cors({
-    origin: (ip, callback) => {
-        try {
-            console.log(ip);
-            if (!ip || ips.includes(ip)) {
-                callback(null, true);
-            }
-            else {
-                callback("Not allowed by CORS");
-            }
-        }
-        catch (error) {
-            console.log(error);
-        }
+// const ips = ['http://127.0.0.1:3000', "http://localhost:3000", "http://127.0.0.1:5500"];
+// app.use(cors({
+//     origin: (ip, callback) => {
+//         try {
+//             console.log(ip);
+//             if (!ip || ips.includes(ip)) {
+//                 callback(null, true);
+//             }
+//             else {
+//                 callback("Not allowed by CORS");
+//             }
+//         }
+//         catch (error) {
+//             console.log(error);
+//         }
 
-    }
-}))
+//     }
+// }))
 
 app.use(session({
     secret: process.env.SESSION_SECRET || "mySecretKey",
