@@ -38,7 +38,7 @@ app.use(session({
 
 
 app.use('/auth',require('./Routes/authRouter'))
-app.use('/orders',require('./Routes/orderRouter'))
+app.use('/students',require('./Routes/studentsRouter'))
 app.get('/',(req,res)=>{
    return res.send("helo");
 })
